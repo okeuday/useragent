@@ -74,6 +74,22 @@ were taken from the original Java project, too.
 
 Changelog
 ---------
+- 0.1.4: Adding support for:
+    Browsers:
+	Opera 11 - 25
+        Internet Explorer Mobile 10 - 11
+	Internet Explorer 11
+        Chrome 20 - 40
+        Safari 6 - 8
+	Firefox 23 - 40
+        BlackBerry 10 browser
+
+    OSes:
+        Windows 8.1 - 10
+	Windows Mobile 8 - 8.1
+	iOS 6 - 8.1
+
+    All 1221 tests passed.
 
 - 0.1.3: Adding support for Firefox versions 21-22.
 - 0.1.2: Adding support for Firefox versions 14 to 20, better binary handling
