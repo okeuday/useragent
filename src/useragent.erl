@@ -279,6 +279,7 @@ os() ->
     Droid=#os{name= <<"Android">>, family=android, type=mobile, manufacturer=google,
               in=[<<"android">>]},
     IOs=#os{name= <<"iOS">>, family=ios, type=mobile, manufacturer=apple, in=[<<"like mac os x">>]},
+    Darwin=#os{name= <<"iOS">>, family=ios, type=mobile, manufacturer=apple, in=[<<"darwin">>]},
     Kind=#os{name= <<"Linux (Kindle)">>, family=kindle, type=tablet,
              manufacturer=amazon, in=[<<"kindle">>]},
     Sym=#os{name= <<"Symbian OS">>, family=symbian, type=mobile, manufacturer=symbian,
@@ -313,6 +314,10 @@ os() ->
       IOs#os{name= <<"Mac OS X (iPad)">>, type=tablet, in=[<<"ipad">>]},
       IOs#os{name= <<"Mac OS X (iPhone)">>, in=[<<"iphone">>]},
       IOs#os{name= <<"Mac OS X (iPod)">>, in=[<<"ipod">>]}],
+     [Darwin,
+      Darwin#os{name= <<"Mac OS X (iPad)">>, type=tablet, in=[<<"ipad">>]},
+      Darwin#os{name= <<"Mac OS X (iPhone)">>, in=[<<"iphone">>]},
+      Darwin#os{name= <<"Mac OS X (iPod)">>, in=[<<"ipod">>]}],
      % osx
      [#os{name= <<"Mac OS X">>, family=mac_osx, type=computer, manufacturer=apple,
           in=[<<"mac os x">>, <<"cfnetwork">>]}],
