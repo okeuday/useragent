@@ -127,9 +127,9 @@ match(UA, InPattern, OutPattern) ->
      lists:all(fun(Pat) -> nomatch =:= binary:match(UA, Pat) end, OutPattern)}.
 
 browsers() ->
-    Opera=#browser{name= <<"Opera">>, family=opera, type=web, manufacturer=opera, engine=presto, in=[<<"opera">>]},
+    Opera=#browser{name= <<"Opera">>, family=opera, type=web, manufacturer=opera, engine=presto, in=[<<"opera">>,<<" opr/">>]},
     Outlook=#browser{name= <<"Outlook">>, family=outlook, type=email, manufacturer=microsoft, engine=word, in=[<<"msoffice">>]},
-    IE=#browser{name= <<"Internet Explorer">>, family=ie, type=web, manufacturer=microsoft, engine=trident, in=[<<"msie">>]},
+    IE=#browser{name= <<"Internet Explorer">>, family=ie, type=web, manufacturer=microsoft, engine=trident, in=[<<"msie">>,<<"trident">>,<<"ie ">>]},
     Chrome=#browser{name= <<"Chrome">>, family=chrome, type=web, manufacturer=google, engine=webkit, in=[<<"chrome">>]},
     Safari=#browser{name= <<"Safari">>, family=safari, type=web, manufacturer=apple, engine=webkit, in=[<<"safari">>]},
     Thundr=#browser{name= <<"Thunderbird">>, family=thunderbird, type=email, manufacturer=mozilla, engine=gecko, in=[<<"thunderbird">>]},
@@ -139,6 +139,17 @@ browsers() ->
      %% Opera
      [Opera
       ,Opera#browser{name= <<"Opera Mini">>, type=mobile, in=[<<"opera mini">>]}
+      ,Opera#browser{name= <<"Opera 25">>, in=[<<"opr/25.">>]}
+      ,Opera#browser{name= <<"Opera 24">>, in=[<<"opr/24.">>]}
+      ,Opera#browser{name= <<"Opera 23">>, in=[<<"opr/23.">>]}
+      ,Opera#browser{name= <<"Opera 20">>, in=[<<"opr/20.">>]}
+      ,Opera#browser{name= <<"Opera 19">>, in=[<<"opr/19.">>]}
+      ,Opera#browser{name= <<"Opera 18">>, in=[<<"opr/18.">>]}
+      ,Opera#browser{name= <<"Opera 17">>, in=[<<"opr/17.">>]}
+      ,Opera#browser{name= <<"Opera 16">>, in=[<<"opr/16.">>]}
+      ,Opera#browser{name= <<"Opera 15">>, in=[<<"opr/15.">>]}
+      ,Opera#browser{name= <<"Opera 12">>, in=[<<"opera/12">>,<<"version/12.">>]}
+      ,Opera#browser{name= <<"Opera 11">>, in=[<<"version/11.">>]}
       ,Opera#browser{name= <<"Opera 10">>, in=[<<"opera/9.8">>]}
       ,Opera#browser{name= <<"Opera 9">>, in=[<<"opera/9">>]}
      ],
@@ -153,9 +164,12 @@ browsers() ->
      %% IE
      [IE
       ,IE#browser{name= <<"Windows Live Mail">>, type=email, in=[<<"outlook-express/7.0">>]}
+      ,IE#browser{name= <<"IE Mobile 11">>, type=mobile, in=[<<"iemobile/11">>]}
+      ,IE#browser{name= <<"IE Mobile 10">>, type=mobile, in=[<<"iemobile/10">>]}
       ,IE#browser{name= <<"IE Mobile 9">>, type=mobile, in=[<<"iemobile/9">>]}
       ,IE#browser{name= <<"IE Mobile 7">>, type=mobile, in=[<<"iemobile 7">>]}
       ,IE#browser{name= <<"IE Mobile 6">>, type=mobile, in=[<<"iemobile 6">>]}
+      ,IE#browser{name= <<"Internet Explorer 11">>, in=[<<"trident/7">>]}
       ,IE#browser{name= <<"Internet Explorer 10">>, in=[<<"msie 10">>]}
       ,IE#browser{name= <<"Internet Explorer 9">>, in=[<<"msie 9">>]}
       ,IE#browser{name= <<"Internet Explorer 8">>, in=[<<"msie 8">>]}
@@ -166,6 +180,27 @@ browsers() ->
      ],
      %% Chrome
      [Chrome
+      ,Chrome#browser{name= <<"Chrome 40">>, in=[<<"chrome/40">>]}
+      ,Chrome#browser{name= <<"Chrome 39">>, in=[<<"chrome/39">>]}
+      ,Chrome#browser{name= <<"Chrome 38">>, in=[<<"chrome/38">>]}
+      ,Chrome#browser{name= <<"Chrome 37">>, in=[<<"chrome/37">>]}
+      ,Chrome#browser{name= <<"Chrome 36">>, in=[<<"chrome/36">>]}
+      ,Chrome#browser{name= <<"Chrome 35">>, in=[<<"chrome/35">>]}
+      ,Chrome#browser{name= <<"Chrome 34">>, in=[<<"chrome/34">>]}
+      ,Chrome#browser{name= <<"Chrome 33">>, in=[<<"chrome/33">>]}
+      ,Chrome#browser{name= <<"Chrome 32">>, in=[<<"chrome/32">>]}
+      ,Chrome#browser{name= <<"Chrome 31">>, in=[<<"chrome/31">>]}
+      ,Chrome#browser{name= <<"Chrome 30">>, in=[<<"chrome/30">>]}
+      ,Chrome#browser{name= <<"Chrome 29">>, in=[<<"chrome/29">>]}
+      ,Chrome#browser{name= <<"Chrome 28">>, in=[<<"chrome/28">>]}
+      ,Chrome#browser{name= <<"Chrome 27">>, in=[<<"chrome/27">>]}
+      ,Chrome#browser{name= <<"Chrome 26">>, in=[<<"chrome/26">>]}
+      ,Chrome#browser{name= <<"Chrome 25">>, in=[<<"chrome/25">>]}
+      ,Chrome#browser{name= <<"Chrome 24">>, in=[<<"chrome/24">>]}
+      ,Chrome#browser{name= <<"Chrome 23">>, in=[<<"chrome/23">>]}
+      ,Chrome#browser{name= <<"Chrome 22">>, in=[<<"chrome/22">>]}
+      ,Chrome#browser{name= <<"Chrome 21">>, in=[<<"chrome/21">>]}
+      ,Chrome#browser{name= <<"Chrome 20">>, in=[<<"chrome/20">>]}
       ,Chrome#browser{name= <<"Chrome 19">>, in=[<<"chrome/19">>]}
       ,Chrome#browser{name= <<"Chrome 18">>, in=[<<"chrome/18">>]}
       ,Chrome#browser{name= <<"Chrome 17">>, in=[<<"chrome/17">>]}
@@ -185,8 +220,12 @@ browsers() ->
      %% Safari
      [Safari
       ,Safari#browser{name= <<"Chrome Mobile">>, type=mobile, manufacturer=google, in=[<<"crmo">>]}
+      ,Safari#browser{name= <<"BlackBerry">>, type=mobile, manufacturer=blackberry, in=[<<"bb10">>]}
       ,Safari#browser{name= <<"Mobile Safari">>, type=mobile, in=[<<"mobile safari">>,<<"mobile/">>]}
       ,Safari#browser{name= <<"Silk">>, manufacturer=amazon, in=[<<"silk/">>]}
+      ,Safari#browser{name= <<"Safari 8">>, in=[<<"version/8">>]}
+      ,Safari#browser{name= <<"Safari 7">>, in=[<<"version/7">>]}
+      ,Safari#browser{name= <<"Safari 6">>, in=[<<"version/6">>]}
       ,Safari#browser{name= <<"Safari 5">>, in=[<<"version/5">>]}
       ,Safari#browser{name= <<"Safari 4">>, in=[<<"version/4">>]}
      ],
@@ -220,6 +259,25 @@ browsers() ->
      %% firefox
      [FF
       ,FF#browser{name= <<"Firefox 3 Mobile">>, type=mobile, in=[<<"firefox/3.5 maemo">>]}
+      ,FF#browser{name= <<"Firefox Mobile">>, type=mobile, in=[<<"mobile">>]}
+      ,FF#browser{name= <<"Firefox 40">>, in=[<<"firefox/40">>]}
+      ,FF#browser{name= <<"Firefox 39">>, in=[<<"firefox/39">>]}
+      ,FF#browser{name= <<"Firefox 38">>, in=[<<"firefox/38">>]}
+      ,FF#browser{name= <<"Firefox 37">>, in=[<<"firefox/37">>]}
+      ,FF#browser{name= <<"Firefox 36">>, in=[<<"firefox/36">>]}
+      ,FF#browser{name= <<"Firefox 35">>, in=[<<"firefox/35">>]}
+      ,FF#browser{name= <<"Firefox 34">>, in=[<<"firefox/34">>]}
+      ,FF#browser{name= <<"Firefox 33">>, in=[<<"firefox/33">>]}
+      ,FF#browser{name= <<"Firefox 32">>, in=[<<"firefox/32">>]}
+      ,FF#browser{name= <<"Firefox 31">>, in=[<<"firefox/31">>]}
+      ,FF#browser{name= <<"Firefox 30">>, in=[<<"firefox/30">>]}
+      ,FF#browser{name= <<"Firefox 29">>, in=[<<"firefox/29">>]}
+      ,FF#browser{name= <<"Firefox 28">>, in=[<<"firefox/28">>]}
+      ,FF#browser{name= <<"Firefox 27">>, in=[<<"firefox/27">>]}
+      ,FF#browser{name= <<"Firefox 26">>, in=[<<"firefox/26">>]}
+      ,FF#browser{name= <<"Firefox 25">>, in=[<<"firefox/25">>]}
+      ,FF#browser{name= <<"Firefox 24">>, in=[<<"firefox/24">>]}
+      ,FF#browser{name= <<"Firefox 23">>, in=[<<"firefox/23">>]}
       ,FF#browser{name= <<"Firefox 22">>, in=[<<"firefox/22">>]}
       ,FF#browser{name= <<"Firefox 21">>, in=[<<"firefox/21">>]}
       ,FF#browser{name= <<"Firefox 20">>, in=[<<"firefox/20">>]}
@@ -288,11 +346,15 @@ os() ->
             manufacturer=blackberry, in=[<<"blackberry">>]},
     [%% Windows
      [Win,
+      Win#os{name= <<"Windows 10">>, in=[<<"windows nt 6.4">>], out=[]},
+      Win#os{name= <<"Windows 8.1">>, in=[<<"windows nt 6.3">>], out=[]},
       Win#os{name= <<"Windows 8">>, in=[<<"windows nt 6.2">>], out=[]},
       Win#os{name= <<"Windows 7">>, in=[<<"windows nt 6.1">>], out=[]},
       Win#os{name= <<"Windows Vista">>, in=[<<"windows nt 6">>], out=[]},
       Win#os{name= <<"Windows 2000">>, in=[<<"windows nt 5.0">>], out=[]},
       Win#os{name= <<"Windows XP">>, in=[<<"windows nt 5">>], out=[]},
+      Win#os{name= <<"Windows Mobile 8.1">>, type=mobile, in=[<<"windows phone 8.1">>], out=[]},
+      Win#os{name= <<"Windows Mobile 8">>, type=mobile, in=[<<"windows phone 8">>], out=[]},
       Win#os{name= <<"Windows Mobile 7">>, type=mobile, in=[<<"windows phone os 7">>], out=[]},
       Win#os{name= <<"Windows Mobile">>, type=mobile, in=[<<"windows ce">>], out=[]},
       Win#os{name= <<"Windows 98">>, in=[<<"windows 98">>,<<"win98">>]}],
@@ -309,6 +371,10 @@ os() ->
      [#os{name= <<"PalmOS">>, family=palm, type=mobile, manufacturer=hp, in=[<<"palm">>]}],
      % ios
      [IOs,
+      IOs#os{name= <<"iOS 8.1 (iPhone)">>, in=[<<"iphone os 8_1">>]},
+      IOs#os{name= <<"iOS 8 (iPhone)">>, in=[<<"iphone os 8_0">>]},
+      IOs#os{name= <<"iOS 7 (iPhone)">>, in=[<<"iphone os 7">>]},
+      IOs#os{name= <<"iOS 6 (iPhone)">>, in=[<<"iphone os 6">>]},
       IOs#os{name= <<"iOS 5 (iPhone)">>, in=[<<"iphone os 5">>]},
       IOs#os{name= <<"iOS 4 (iPhone)">>, in=[<<"iphone os 4">>]},
       IOs#os{name= <<"Mac OS X (iPad)">>, type=tablet, in=[<<"ipad">>]},
